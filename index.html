@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamad Ali Al Saidi | AI & Machine Learning Engineer</title>
+    <meta name="description" content="Portfolio of Mohamad Ali Al Saidi, PhD candidate in Artificial Intelligence and Machine Learning Engineer.">
+    
+    <!-- Social Preview / Open Graph Tags -->
+    <meta property="og:title" content="Mohamad Ali Al Saidi | AI & Machine Learning Engineer">
+    <meta property="og:description" content="Portfolio of Mohamad Ali Al Saidi, PhD candidate in Artificial Intelligence.">
+    <meta property="og:image" content="https://ui-avatars.com/api/?name=Mohamad+Ali&background=3b82f6&color=fff&size=512">
+    <meta property="og:url" content="https://mohamad-al-saidi.com">
+    <meta property="og:type" content="profile">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mohamad Ali Al Saidi | AI Engineer">
+    <meta name="twitter:description" content="Portfolio of Mohamad Ali Al Saidi, PhD candidate in Artificial Intelligence.">
+    <meta name="twitter:image" content="https://ui-avatars.com/api/?name=Mohamad+Ali&background=3b82f6&color=fff&size=512">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables - Dark Mode (Default) */
+        :root {
+            --bg-color: #0b1120;
+            --bg-surface: #111827;
+            --bg-glass: rgba(17, 24, 39, 0.7);
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --primary-light: rgba(59, 130, 246, 0.15);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --nav-bg: rgba(11, 17, 32, 0.85);
+            --nav-bg-scrolled: rgba(11, 17, 32, 0.95);
+            --shadow-scrolled: 0 4px 30px rgba(0, 0, 0, 0.5);
+            --tag-bg: rgba(255, 255, 255, 0.05);
+            --tag-text: #cbd5e1;
+            --font-main: 'Inter', sans-serif;
+            --transition: all 0.3s ease;
+        }
+
+        /* CSS Variables - Light Mode */
+        :root[data-theme="light"] {
+            --bg-color: #f8fafc;
+            --bg-surface: #ffffff;
+            --bg-glass: rgba(255, 255, 255, 0.85);
+            --primary: #2563eb; /* Slightly darker for contrast */
+            --primary-hover: #1d4ed8;
+            --primary-light: rgba(37, 99, 235, 0.1);
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border-color: rgba(0, 0, 0, 0.1);
+            --nav-bg: rgba(255, 255, 255, 0.85);
+            --nav-bg-scrolled: rgba(255, 255, 255, 0.98);
+            --shadow-scrolled: 0 4px 30px rgba(0, 0, 0, 0.08);
+            --tag-bg: rgba(0, 0, 0, 0.04);
+            --tag-text: #334155;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout & Utilities */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .glass-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: var(--transition);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Ambient Background */
+        .ambient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            background: radial-gradient(circle at 15% 50%, rgba(29, 78, 216, 0.15), transparent 25%),
+                        radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.1), transparent 25%);
+            transition: background 0.3s ease;
+        }
+        
+        :root[data-theme="light"] .ambient-bg {
+            background: radial-gradient(circle at 15% 50%, rgba(37, 99, 235, 0.06), transparent 25%),
+                        radial-gradient(circle at 85% 30%, rgba(2, 132, 199, 0.04), transparent 25%);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        nav.scrolled {
+            background: var(--nav-bg-scrolled);
+            box-shadow: var(--shadow-scrolled);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--text-main);
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 70px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-avatar-container {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, var(--primary), #38bdf8);
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px -5px var(--primary-light);
+            transition: var(--transition);
+        }
+
+        .hero-avatar-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px -5px rgba(59, 130, 246, 0.4);
+        }
+
+        .hero-avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--bg-color);
+            background-color: var(--bg-surface);
+            transition: border-color 0.3s ease;
+        }
+
+        .hero-subtitle {
+            color: var(--primary);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-desc {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border: 1px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-main);
+            background: var(--primary-light);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(128, 128, 128, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            color: var(--primary);
+            border-color: rgba(59, 130, 246, 0.4);
+            background: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px -5px rgba(59, 130, 246, 0.3);
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+        
+        .about-text p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--primary-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: rgba(128, 128, 128, 0.05);
+        }
+
+        .stat-icon {
+            color: var(--primary);
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Focus Areas */
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .focus-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .focus-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Timeline (Education & Experience) */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20px;
+            height: 100%;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 15px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        .timeline-date {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-content h4 {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content p, .timeline-content ul {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        
+        .timeline-content ul {
+            padding-left: 1.2rem;
+            list-style-type: disc;
+        }
+        
+        .timeline-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-card ul {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            padding-left: 1.2rem;
+            list-style-type: disc;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-group h3 {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .skill-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-pill {
+            background: var(--primary-light);
+            color: var(--primary);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item h3 {
+            font-size: 1.1rem;
+        }
+
+        .contact-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            background: var(--bg-surface);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--bg-surface);
+                flex-direction: column;
+                padding: 1rem 0;
+                border-bottom: 1px solid var(--border-color);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links a {
+                padding: 1rem 2rem;
+                width: 100%;
+                text-align: center;
+            }
+            .nav-right {
+                gap: 1rem;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .btn-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Ambient Background -->
+    <div class="ambient-bg"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="#home" class="logo">Mohamad<span>.AI</span></a>
+            
+            <div class="nav-right">
+                <div class="nav-links" id="navLinks">
+                    <a href="#about">About</a>
+                    <a href="#education">Education</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact</a>
+                </div>
+
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark/Light Mode">
+                        <svg id="themeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+                    </button>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-avatar-container">
+                    <!-- Replace the src URL below with your actual profile picture path (e.g., "profile.jpg") -->
+                    <img src="https://ui-avatars.com/api/?name=Mohamad+Ali&background=3b82f6&color=fff&size=256&font-size=0.33" alt="Mohamad Ali Al Saidi" class="hero-avatar">
+                </div>
+                <span class="hero-subtitle">PhD Candidate | Researcher</span>
+                <h1 class="hero-title">Mohamad Ali Al Saidi</h1>
+                <p class="hero-desc">
+                    AI & Machine Learning Engineer specializing in computer vision, natural language processing, reinforcement learning, and TinyML. Bridging the gap between state-of-the-art research and high-performance deployable systems.
+                </p>
+                <div class="btn-group">
+                    <a href="Mohamad_Ali_Al_Saidi_CV_2026.pdf" download class="btn btn-primary">
+                        Download CV
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    </a>
+                    <a href="#projects" class="btn btn-outline">
+                        View Projects
+                    </a>
+                </div>
+                
+                <!-- Social Links in Hero -->
+                <div class="social-links" style="margin-top: 2rem;">
+                    <a href="https://linkedin.com/in/YOUR_PROFILE_HERE" target="_blank" class="social-link" title="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="https://github.com/YOUR_GITHUB_HERE" target="_blank" class="social-link" title="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                    <a href="https://wa.me/9613013113" target="_blank" class="social-link" title="WhatsApp">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="glass-card about-text">
+                    <p>
+                        I am a PhD candidate in Artificial Intelligence and a dedicated Machine Learning Engineer. I possess deep expertise in designing, training, and validating sophisticated models across a diverse spectrum of AI domains—from computer vision and NLP to time-series forecasting, anomaly detection, recommendation systems, and reinforcement learning.
+                    </p>
+                    <p>
+                        My work heavily focuses on efficient learning and deployability. I specialize in model architecture design, hyperparameter optimization, and end-to-end AI workflows. Whether it requires distributed training on GPU clusters or optimizing ultra-compact models for TinyML applications on edge devices, my goal is to achieve state-of-the-art results that meet strict production SLAs.
+                    </p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                            <div>
+                                <strong>End-to-End AI</strong>
+                                <span style="display:block; font-size:0.85rem; color:var(--text-muted);">Data, Training to Cloud & Edge</span>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            <div>
+                                <strong>TinyML Expert</strong>
+                                <span style="display:block; font-size:0.85rem; color:var(--text-muted);">Pruning, Quantization, Edge AI</span>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                            <div>
+                                <strong>Academic Rigor</strong>
+                                <span style="display:block; font-size:0.85rem; color:var(--text-muted);">PhD & Research Background</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research & Focus Areas -->
+    <section id="focus" class="section" style="background: rgba(128, 128, 128, 0.03);">
+        <div class="container">
+            <h2 class="section-title">Focus Areas</h2>
+            <div class="focus-grid">
+                <div class="glass-card focus-card">
+                    <h3>Deep Learning & ML</h3>
+                    <p>Designing and validating advanced models using PyTorch, TensorFlow. Expertise in hyperparameter optimization and continuous monitoring for robust performance.</p>
+                </div>
+                <div class="glass-card focus-card">
+                    <h3>TinyML & Edge AI</h3>
+                    <p>Applying model pruning, quantization, and Neural Architecture Search (NAS) to deploy ultra-compact models on embedded devices like Arduino Nano 33 BLE.</p>
+                </div>
+                <div class="glass-card focus-card">
+                    <h3>Computer Vision</h3>
+                    <p>Building real-time object detection and segmentation systems utilizing YOLOv8, Mask R-CNN, and Faster R-CNN deployed on diverse hardware profiles.</p>
+                </div>
+                <div class="glass-card focus-card">
+                    <h3>Multilingual NLP</h3>
+                    <p>Fine-tuning LLMs (BERT, GPT, T5) for text summarization, NER, question-answering, and knowledge graph extraction with robust pipeline implementation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card timeline-content">
+                        <span class="timeline-date">2023 – Present</span>
+                        <h3>Ph.D. in Computer Engineering, Artificial Intelligence & Robotics</h3>
+                        <h4>Ferdowsi University of Mashhad • Mashhad, Iran</h4>
+                        <p>Focusing on advanced AI research, combining deep learning methodologies with robust engineering practices for deployable intelligence.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card timeline-content">
+                        <span class="timeline-date">2024 – 2026</span>
+                        <h3>Doctor of Business Administration (DBA)</h3>
+                        <h4>University of Tehran • Tehran, Iran</h4>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card timeline-content">
+                        <span class="timeline-date">2020 – 2022</span>
+                        <h3>M.Sc. in Computer Engineering, AI & Robotics</h3>
+                        <h4>Ferdowsi University of Mashhad • Mashhad, Iran</h4>
+                        <p><strong>GPA:</strong> 3.9/4.0</p>
+                        <p><strong>Thesis:</strong> Hierarchical Solving of Euclidean Geometry Ruler and Compass Construction Problems Using Visual Knowledge Representation and Curriculum Learning.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card timeline-content">
+                        <span class="timeline-date">2022 – 2023</span>
+                        <h3>Master of Business Administration (MBA)</h3>
+                        <h4>Ferdowsi University of Mashhad • Mashhad, Iran</h4>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card timeline-content">
+                        <span class="timeline-date">2016 – 2020</span>
+                        <h3>B.Sc. in Computer Engineering, Artificial Intelligence</h3>
+                        <h4>Ferdowsi University of Mashhad • Mashhad, Iran</h4>
+                        <p><strong>GPA:</strong> 3.9/4.0</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section" style="background: rgba(128, 128, 128, 0.03);">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card timeline-content">
+                        <span class="timeline-date">2018 – 2025</span>
+                        <h3>Airline System Developer</h3>
+                        <h4>Sky Gift • Beirut, Lebanon</h4>
+                        <ul>
+                            <li>Architected and implemented a modular airline reservation and management platform supporting high-volume daily bookings.</li>
+                            <li>Engineered an AI-driven OCR module for passport data extraction using CV models, achieving 95% accuracy and reducing manual processing time by 80%.</li>
+                            <li>Developed interactive UI components and dashboards to visualize real-time booking metrics.</li>
+                            <li>Designed robust ETL pipelines in Python and SQL, ensuring 99% data integrity.</li>
+                            <li>Managed Windows servers/network infrastructure, enforcing security and disaster recovery for 99.9% uptime.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card timeline-content">
+                        <span class="timeline-date">2017 – 2018</span>
+                        <h3>System Administrator Intern</h3>
+                        <h4>ICT Department, Ferdowsi University of Mashhad • Mashhad, Iran</h4>
+                        <ul>
+                            <li>Maintained university ICT infrastructure: installed, configured, and troubleshot Windows/Linux servers, workstations, and network equipment.</li>
+                            <li>Led deployment of security patches and system upgrades, reducing critical vulnerabilities by 90%.</li>
+                            <li>Automated routine maintenance tasks with Bash and PowerShell scripts, cutting weekly manual effort by 50%.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Key Projects & Applied Research</h2>
+            <div class="projects-grid">
+                
+                <div class="glass-card project-card">
+                    <h3>LLMs & Natural Language Processing</h3>
+                    <ul>
+                        <li>Fine-tuned BERT, GPT, and T5 transformer models on specialized datasets for text summarization, QA, and classification.</li>
+                        <li>Developed a Persian medical report summarization system (30% faster clinical info extraction).</li>
+                        <li>Implemented NLP pipelines for NER, knowledge graph extraction, and document clustering.</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="tag">Transformers</span>
+                        <span class="tag">Hugging Face</span>
+                        <span class="tag">Python</span>
+                    </div>
+                </div>
+
+                <div class="glass-card project-card">
+                    <h3>Computer Vision & Object Detection</h3>
+                    <ul>
+                        <li>Built real-time detection systems using YOLOv8, Mask R-CNN, and Faster R-CNN on GPUs and Edge devices.</li>
+                        <li>Developed high-accuracy passport extraction pipeline utilizing YOLOv8.</li>
+                        <li>Performed advanced image processing tasks (stitching, restoration, enhancement, fisheye correction).</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="tag">YOLOv8</span>
+                        <span class="tag">OpenCV</span>
+                        <span class="tag">PyTorch</span>
+                    </div>
+                </div>
+
+                <div class="glass-card project-card">
+                    <h3>TinyML & Embedded Systems</h3>
+                    <ul>
+                        <li>Applied model pruning, quantization, and NAS to develop ultra-compact DL models.</li>
+                        <li>Successfully deployed optimized TinyML models on Arduino Nano 33 BLE, maintaining high inference accuracy with minimal power usage.</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="tag">TensorFlow Lite Micro</span>
+                        <span class="tag">MCUNet</span>
+                        <span class="tag">Arduino</span>
+                    </div>
+                </div>
+
+                <div class="glass-card project-card">
+                    <h3>Reinforcement Learning Agents</h3>
+                    <ul>
+                        <li>Trained agents across Atari, CartPole, mazes, and custom shooters using advanced reward shaping and exploration.</li>
+                        <li>Algorithms implemented include Q-Learning, SARSA, DQN, PPO, Actor-Critic, and MCTS.</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="tag">PPO</span>
+                        <span class="tag">DQN</span>
+                        <span class="tag">Python</span>
+                    </div>
+                </div>
+
+                <div class="glass-card project-card">
+                    <h3>Robotics & Simulation</h3>
+                    <ul>
+                        <li>Programmed autonomous navigation and object manipulation using TurtleBot3 and robotic arms in ROS/Gazebo.</li>
+                        <li>Integrated LiDAR sensors for real-time perception, SLAM-based localization, and obstacle avoidance.</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="tag">ROS</span>
+                        <span class="tag">Gazebo</span>
+                        <span class="tag">C++</span>
+                    </div>
+                </div>
+
+                <div class="glass-card project-card">
+                    <h3>Software & Systems Engineering</h3>
+                    <ul>
+                        <li>Developed scalable web systems (car rental, recommenders) using Java, PHP, SQL.</li>
+                        <li>Built secure communication modules (AES, RSA) and kernel-level Linux tools.</li>
+                        <li>Engineered custom compiler and CPU architecture in Verilog.</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="tag">Java/PHP</span>
+                        <span class="tag">Verilog</span>
+                        <span class="tag">Linux Kernel</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section" style="background: rgba(128, 128, 128, 0.03);">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container glass-card">
+                
+                <div class="skill-group">
+                    <h3>Programming & Core</h3>
+                    <div class="skill-pills">
+                        <span class="skill-pill">Python</span>
+                        <span class="skill-pill">Java</span>
+                        <span class="skill-pill">C/C++</span>
+                        <span class="skill-pill">PHP</span>
+                        <span class="skill-pill">SQL</span>
+                        <span class="skill-pill">Prolog</span>
+                        <span class="skill-pill">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3>AI & Deep Learning</h3>
+                    <div class="skill-pills">
+                        <span class="skill-pill">PyTorch</span>
+                        <span class="skill-pill">TensorFlow</span>
+                        <span class="skill-pill">Keras</span>
+                        <span class="skill-pill">Scikit-learn</span>
+                        <span class="skill-pill">Hugging Face</span>
+                        <span class="skill-pill">MCUNet</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3>TinyML & Edge AI</h3>
+                    <div class="skill-pills">
+                        <span class="skill-pill">TensorFlow Lite Micro</span>
+                        <span class="skill-pill">Arduino Nano 33 BLE</span>
+                        <span class="skill-pill">Edge Impulse</span>
+                        <span class="skill-pill">Model Pruning</span>
+                        <span class="skill-pill">Quantization</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Computer Vision</h3>
+                    <div class="skill-pills">
+                        <span class="skill-pill">OpenCV</span>
+                        <span class="skill-pill">YOLO (v5/v8)</span>
+                        <span class="skill-pill">Mask R-CNN</span>
+                        <span class="skill-pill">Faster R-CNN</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Robotics & Tools</h3>
+                    <div class="skill-pills">
+                        <span class="skill-pill">ROS</span>
+                        <span class="skill-pill">Gazebo</span>
+                        <span class="skill-pill">LiDAR</span>
+                        <span class="skill-pill">Git</span>
+                        <span class="skill-pill">Docker</span>
+                        <span class="skill-pill">Linux</span>
+                        <span class="skill-pill">LaTeX</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Languages</h3>
+                    <div class="skill-pills">
+                        <span class="skill-pill">Arabic (Native)</span>
+                        <span class="skill-pill">English (C1)</span>
+                        <span class="skill-pill">Persian (C2)</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-grid">
+                
+                <a href="mailto:Eng.mohamad.ali.saidi@gmail.com" class="glass-card contact-item">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <h3>Email</h3>
+                    <p>Eng.mohamad.ali.saidi@gmail.com</p>
+                </a>
+
+                <div class="glass-card contact-item">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
+                    <h3>Phone</h3>
+                    <p>+961 3 013 113</p>
+                </div>
+
+                <div class="glass-card contact-item">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <h3>Location</h3>
+                    <p>Beirut, Lebanon</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <!-- Social Links in Footer -->
+            <div class="social-links" style="justify-content: center; margin-bottom: 1.5rem;">
+                <a href="https://linkedin.com/in/YOUR_PROFILE_HERE" target="_blank" class="social-link" title="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <a href="https://github.com/YOUR_GITHUB_HERE" target="_blank" class="social-link" title="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <a href="https://wa.me/9613013113" target="_blank" class="social-link" title="WhatsApp">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                </a>
+            </div>
+            <p>&copy; <span id="year"></span> Mohamad Ali Al Saidi. AI & Machine Learning Engineer.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        
+        // SVG paths for Sun and Moon
+        const moonIconPath = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+        const sunIconPath = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+
+        // Check for saved preference or system preference
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+
+        const setTheme = (theme) => {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            themeIcon.innerHTML = theme === 'light' ? moonIconPath : sunIconPath; // If light mode, show moon to toggle back to dark
+        };
+
+        // Initialize Theme
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else if (systemPrefersLight) {
+            setTheme('light');
+        } else {
+            setTheme('dark');
+        }
+
+        // Toggle Event
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            setTheme(currentTheme === 'light' ? 'dark' : 'light');
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Sticky Navbar Effect & Scroll Spy
+        const nav = document.querySelector('nav');
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            // Navbar background logic via CSS class
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+
+            // Scroll spy
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href').includes(current) && current !== 'home') {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
